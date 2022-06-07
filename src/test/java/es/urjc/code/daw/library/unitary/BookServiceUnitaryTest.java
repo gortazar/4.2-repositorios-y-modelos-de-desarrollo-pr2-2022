@@ -11,20 +11,20 @@ import org.junit.jupiter.api.Test;
 import es.urjc.code.daw.library.book.Book;
 import es.urjc.code.daw.library.book.BookRepository;
 import es.urjc.code.daw.library.book.BookService;
-import es.urjc.code.daw.library.notification.NotificationService;
+import es.urjc.code.daw.library.notification.SynchronousNotificationService;
 
 @DisplayName("BookService Unitary tests")
 public class BookServiceUnitaryTest {
 
     private BookService bookService;
-    private NotificationService notificationService;
+    private SynchronousNotificationService notificationService;
     private BookRepository repository;
 
     @BeforeEach
 	public void setup() {
         
         repository = mock(BookRepository.class);
-        notificationService = mock(NotificationService.class);
+        notificationService = mock(SynchronousNotificationService.class);
         bookService = new BookService(repository, notificationService);
 			
     }
