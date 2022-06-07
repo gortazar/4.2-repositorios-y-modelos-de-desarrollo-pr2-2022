@@ -29,15 +29,13 @@ public class BookServiceUnitaryTest {
         
         repository = mock(BookRepository.class);
         notificationService = mock(NotificationService.class);
+        bookService = new BookService(repository, notificationService, new LineBreaker());
 			
     }
 
     @Test
     @DisplayName("Cuando se guarda un libro utilizando BookService, se guarda en el repositorio y se lanza una notificación")
-    @AllDisabled(Features.class)
-	public void createBook(TestFeatureManager featureManager){
-
-        bookService = new BookService(repository, notificationService, new LineBreaker(), featureManager);
+	public void createBook(){
 
         Book book = new Book("FAKE BOOK", "FAKE DESCRIPTION");
 
@@ -54,11 +52,8 @@ public class BookServiceUnitaryTest {
     
     @Test
     @DisplayName("Cuando se borra un libro utilizando BookService, se elimina del repositorio y se lanza una notificación")
-    @AllDisabled(Features.class)
-	public void deleteBook(TestFeatureManager featureManager){
+	public void deleteBook(){
         
-        bookService = new BookService(repository, notificationService, new LineBreaker(), featureManager);
-
         long fakeId = 1L;
 
         // Given
