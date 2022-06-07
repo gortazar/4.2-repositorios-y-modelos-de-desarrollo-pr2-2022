@@ -6,7 +6,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EventBasedNotificationService implements NotificationService {
+public class EventBasedNotificationService {
 	
 	private ApplicationEventPublisher publisher;
 	

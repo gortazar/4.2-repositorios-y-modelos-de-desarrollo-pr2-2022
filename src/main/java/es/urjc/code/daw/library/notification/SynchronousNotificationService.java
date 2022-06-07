@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SynchronousNotificationService implements NotificationService {
+public class SynchronousNotificationService {
 
     Logger logger = LoggerFactory.getLogger(SynchronousNotificationService.class);
 

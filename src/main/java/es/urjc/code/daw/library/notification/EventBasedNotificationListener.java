@@ -12,7 +12,7 @@ public class EventBasedNotificationListener {
     
 	@EventListener
 	public void process(String message) {
-		logger.info(message);
+		logger.info("Async: " + message);
 	}
 	
 }

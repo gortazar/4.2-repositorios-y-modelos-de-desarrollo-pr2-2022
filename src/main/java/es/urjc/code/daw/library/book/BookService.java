@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import es.urjc.code.daw.library.notification.SynchronousNotificationService;
+import es.urjc.code.daw.library.notification.NotificationService;
 
 /* Este servicio se usará para incluir la funcionalidad que sea 
  * usada desde el BookRestController y el BookWebController
@@ -14,9 +14,9 @@ import es.urjc.code.daw.library.notification.SynchronousNotificationService;
 public class BookService {
 
 	private BookRepository repository;
-	private SynchronousNotificationService notificationService;
+	private NotificationService notificationService;
 
-	public BookService(BookRepository repository, SynchronousNotificationService notificationService){
+	public BookService(BookRepository repository, NotificationService notificationService){
 		this.repository = repository;
 		this.notificationService = notificationService;
 	}
